@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kimura CryptoApp - Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <script>
+  function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('open');
+  }
+</script>
+
+  <body>
+    <div class="app-container">
+      <button class="hamburger" onclick="toggleSidebar()">☰</button>
+      <nav class="sidebar">
+        <h2>Kimura CryptoApp</h2>
+        <ul class="menu">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Transferências</a></li>
+          <li><a href="#">Pagamentos</a></li>
+          <li><a href="#">Histórico</a></li>
+          <li><a href="#">Configurações</a></li>
+        </ul>
+        <form action="/logout" method="GET">
+          <button type="submit" class="logout-btn">Sair</button>
+        </form>
+      </nav>
+      <main class="main-content">
+  <header>
+    <h1>Olá, <%= user.fullName %>!</h1>
+    <p>Email: <%= user.email %></p>
+    <p>Telefone: <%= user.phone %></p>
+    <p>País: <%= user.country || 'Não informado' %></p>
+    <p>
+      Tipo de usuário: <%= user.userType ?
+        (user.userType.charAt(0).toUpperCase() + user.userType.slice(1)) :
+        'Não definido' %>
+    </p>
+    <p>Cadastro em: <%= user.registeredAt || 'Data não disponível' %></p>
+    <p>Endereço: <%= user.address || 'Não informado' %></p>
+    <p>Data de nascimento: <%= user.birthDate || 'Não informada' %></p>
+  </header>
+
+  <section class="balance-section">
+    <h2>Saldo da Carteira</h2>
+    <div class="balances">
+      <div class="balance-card btc">
+        <h3>Bitcoin (BTC)</h3>
+        <p><%= (Number(user.balanceBTC) || 0).toFixed(6) %> BTC</p>
+      </div>
+      <div class="balance-card eth">
+        <h3>Ethereum (ETH)</h3>
+        <p><%= (Number(user.balanceETH) || 0).toFixed(6) %> ETH</p>
+      </div>
+      <div class="balance-card usdt">
+        <h3>Tether (USDT)</h3>
+        <p><%= (Number(user.balanceUSDT) || 0).toFixed(2) %> USDT</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="actions-section">
+    <h2>Ações</h2>
+    <div class="actions-buttons">
+      <button class="action-btn">Nova Transferência</button>
+      <button class="action-btn">Pagar Conta</button>
+      <button class="action-btn latest">Histórico de Transações</button>
+    </div>
+  </section>
+</main>
+
+    </div>
+  </body>
+</html>

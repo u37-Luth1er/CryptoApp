@@ -1,0 +1,28 @@
+{
+  "name": "Kimura CryptoApp",
+  "version": "1.0.0",
+  "description": "Este é um projeto **fictício** e **educacional** que simula uma aplicação de carteira de criptomoedas com **vulnerabilidades propositais de SQL Injection**, com o objetivo de conscientizar desenvolvedores sobre os riscos e práticas seguras no desenvolvimento web.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shellt3r/cryptoApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shellt3r/cryptoApp/issues"
+  },
+  "homepage": "https://github.com/shellt3r/cryptoApp#readme",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "sqlite3": "^5.1.7"
+  }
+}

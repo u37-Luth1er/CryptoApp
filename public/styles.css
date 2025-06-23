@@ -1,0 +1,419 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Container principal */
+.app-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Sidebar estilo */
+.sidebar {
+  background: #161b22;
+  width: 280px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #30363d;
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  user-select: none;
+}
+
+.menu {
+  list-style: none;
+  flex-grow: 1;
+}
+
+.menu li {
+  margin-bottom: 1.5rem;
+}
+
+.menu a {
+  color: #c9d1d9;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #58a6ff;
+}
+
+/* Botão logout */
+.logout-btn {
+  background: #f85149;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #da3633;
+}
+
+/* Main content */
+.main-content {
+  flex-grow: 1;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+  color: #8b949e;
+}
+
+/* Seção de saldo */
+.balance-section {
+  margin-top: 3rem;
+}
+
+.balance-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #58a6ff;
+}
+
+.balances {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.balance-card {
+  flex: 1;
+  background: #21262d;
+  border-radius: 12px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.15);
+  transition: box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.balance-card:hover {
+  box-shadow: 0 0 25px rgba(88, 166, 255, 0.35);
+}
+
+.balance-card h3 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.balance-card p {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #c9d1d9;
+}
+
+/* Cores específicas das moedas */
+.btc {
+  border-left: 5px solid #f7931a;
+}
+
+.eth {
+  border-left: 5px solid #627eea;
+}
+
+.usdt {
+  border-left: 5px solid #26a17b;
+}
+
+/* Ações */
+.actions-section {
+  margin-top: 4rem;
+}
+
+.actions-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #58a6ff;
+}
+
+.actions-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 15px 0;
+  background: #238636;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+  background: #2ea043;
+}
+
+/* Login container (caso queira ver o login também) */
+.login-container {
+  background: #161b22;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+}
+
+.login-container h1 {
+  margin-bottom: 2rem;
+  color: #58a6ff;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 14px 15px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 14px 0;
+  background: #238636;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-form button:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #0f4c81);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  width: 100%;
+}
+
+.login-container {
+  background: rgba(255 255 255 / 0.1);
+  padding: 40px 50px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  color: #00c86f;
+}
+
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 15px 0 25px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1.1rem;
+}
+
+button {
+  background-color: #00c86f;
+  color: white;
+  border: none;
+  padding: 3px;
+  width: 5rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  color: #ff4d4d;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+  }
+}
+
+/* Botão hamburger */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 2rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/* Sidebar responsiva */
+@media (max-width: 768px) {
+  .login-container {
+    background: #161b22;
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    width: 360px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(88, 166, 255, 0.3);
+    margin: 10%;
+  }
+
+  .actions-buttons .latest {
+  margin-bottom: 2rem;
+}
+
+  .app-container {
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 250px;
+    height: 100%;
+    background: #161b22;
+    z-index: 1000;
+    transition: left 0.3s ease;
+    padding-top: 4rem;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .balances,
+  .actions-buttons {
+    flex-direction: column;
+  }
+
+  .balance-card,
+  .action-btn {
+    width: 100%;
+  }
+
+  .balance-card {
+    padding: 1rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+    margin-top: 14px;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .balance-card p {
+    font-size: 1.3rem;
+  }
+
+  .actions-section h2,
+  .balance-section h2 {
+    font-size: 1.2rem;
+  }
+
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+.mobile-navbar button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+#mobile-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text-decoration: none;
+}
